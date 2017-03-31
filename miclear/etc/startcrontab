@@ -1,0 +1,16 @@
+* * * * * ${HOME}script/dayend.sh >/dev/null 2>&1 
+* * * * * sleep 5; ${HOME}/script/dayend.sh >/dev/null 2>&1 
+* * * * * sleep 10; ${HOME}/script/dayend.sh >/dev/null 2>&1 
+* * * * * sleep 15; ${HOME}/script/dayend.sh >/dev/null 2>&1 
+* * * * * sleep 20; ${HOME}/script/dayend.sh >/dev/null 2>&1 
+* * * * * sleep 25; ${HOME}/script/dayend.sh >/dev/null 2>&1 
+* * * * * sleep 30; ${HOME}/script/dayend.sh >/dev/null 2>&1 
+* * * * * sleep 35; ${HOME}/script/dayend.sh >/dev/null 2>&1 
+* * * * * sleep 40; ${HOME}/script/dayend.sh >/dev/null 2>&1 
+* * * * * sleep 45; ${HOME}/script/dayend.sh >/dev/null 2>&1 
+* * * * * sleep 50; ${HOME}/script/dayend.sh >/dev/null 2>&1 
+* * * * * sleep 55; ${HOME}/script/dayend.sh >/dev/null 2>&1 
+1 1 * * * ${HOME}/script/dayendstart.sh >/home/miclear/log/log.log 
+30 12 * * * ${HOME}/script/auto_bak.sh >/dev/null 2>&1
+30 17 * * * ${HOME}/script/auto_bak.sh >/dev/null 2>&1
+30 21 * * * ${HOME}/script/auto_bak.sh >/dev/null 2>&1

@@ -1,0 +1,35 @@
+#定义pro*C的编译器
+PROC=proc
+#定义C的编译器
+CC=gcc -m64
+#make
+MAKE=make
+
+RM= rm -f
+SHARED  = -g -shared
+
+#系统库文件
+SYSLIBS=-lpthread -lthread -ldl -lm -lc
+MYSQLLIBS=-lmysqlclient
+
+INCLDIR = $(HOME)/incl
+MYSQL_INCLDIR = /usr/include/mysql/ 
+INCL = -I$(INCLDIR) -I${MYSQL_INCLDIR}
+LIBDIR  = $(HOME)/lib
+MYSQL_LIBDIR = /usr/lib64/mysql
+LIB  = -L$(LIBDIR) -L${MYSQL_LIBDIR}
+BINDIR  = $(HOME)/bin
+
+OSFLAGS = -DLINUX -DDEBUG -fPIC -D_UNICODE
+CFLAGS  = $(OSFLAGS) $(INCL)
+#CFLAGS  = $(OSFLAGS) `addprefix -I $(INCLUDE)`
+
+.SUFFIXES: .pc .c .cpp .o
+
+.pc.c:
+	${PROC} ${PCFLGS} iname=$<
+	rm -rf $*.lis
+
+.c.so:
+	@$(RM) $(LIBDIR)/$@
+	$(CC) $(CFLAGS) $(SHARED) -o $(LIBDIR)/$@ $(<)
